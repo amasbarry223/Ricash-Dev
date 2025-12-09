@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Book, FileText, MessageCircle, Mail, Phone, Search } from "lucide-react"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 
 export default function SupportPage() {
   return (

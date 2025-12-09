@@ -2,7 +2,7 @@ import { Navbar } from "@/components/navbar"
 import { Badge } from "@/components/ui/badge"
 import { CodeTabs } from "@/components/code-tabs"
 import { ApiPlayground } from "@/components/api-playground"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import { ChevronLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
 

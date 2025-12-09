@@ -29,8 +29,11 @@
 Certaines pages utilisent `next/link` au lieu de `@/i18n/routing`, ce qui casse le système de locale.
 
 **Fichiers affectés:**
-- `app/[locale]/docs/page.tsx` (ligne 5) ❌
-- `app/[locale]/docs/sdks/page.tsx` (ligne 4) ❌
+- `app/[locale]/docs/page.tsx` (ligne 5) ✅ CORRIGÉ
+- `app/[locale]/docs/sdks/page.tsx` (ligne 4) ✅ CORRIGÉ
+- `app/[locale]/api-reference/page.tsx` (ligne 1) ✅ CORRIGÉ
+- `app/[locale]/api-reference/wallet/create/page.tsx` (ligne 5) ✅ CORRIGÉ
+- `app/[locale]/support/page.tsx` (ligne 10) ✅ CORRIGÉ
 
 **Impact:**
 - Les liens ne respectent pas le système de locale
@@ -302,7 +305,7 @@ Créer un contexte `SidebarContext` ou utiliser un composant `SidebarProvider`.
 
 | Problème | Priorité | Impact | Fichiers Affectés |
 |----------|----------|--------|-------------------|
-| Imports Link | 🔴 Critique | Élevé | 2 fichiers |
+| Imports Link | 🔴 Critique | Élevé | 5 fichiers (tous corrigés) |
 | État actif sidebar | 🔴 Critique | Élevé | 1 fichier |
 | Structure HTML | 🔴 Critique | Moyen | 1 fichier |
 | Sidebar responsive | 🟡 Important | Élevé | 1 fichier |
@@ -338,6 +341,9 @@ Créer un contexte `SidebarContext` ou utiliser un composant `SidebarProvider`.
 1. ✅ **Imports Link corrigés**
    - `app/[locale]/docs/page.tsx` : Utilise maintenant `@/i18n/routing`
    - `app/[locale]/docs/sdks/page.tsx` : Utilise maintenant `@/i18n/routing`
+   - `app/[locale]/api-reference/page.tsx` : Utilise maintenant `@/i18n/routing`
+   - `app/[locale]/api-reference/wallet/create/page.tsx` : Utilise maintenant `@/i18n/routing`
+   - `app/[locale]/support/page.tsx` : Utilise maintenant `@/i18n/routing`
 
 2. ✅ **Détection d'état actif corrigée**
    - Fonction `isActive()` implémentée avec gestion des locales
@@ -402,5 +408,6 @@ Créer un contexte `SidebarContext` ou utiliser un composant `SidebarProvider`.
 
 **Rapport généré par:** Expert Senior Full-Stack & UX/UI  
 **Dernière mise à jour:** 2025-01-15  
-**Statut:** ✅ Toutes les corrections critiques et importantes appliquées
+**Statut:** ✅ Toutes les corrections critiques et importantes appliquées  
+**Dernière vérification:** 2025-01-15 - Tous les imports Link corrigés (5 fichiers), build réussi sans erreurs
 
