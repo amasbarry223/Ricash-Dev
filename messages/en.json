@@ -1,0 +1,216 @@
+{
+  "common": {
+    "ricash": "Ricash",
+    "developers": "Developers",
+    "signIn": "Sign In",
+    "dashboard": "Dashboard",
+    "documentation": "Documentation",
+    "apiReference": "API Reference",
+    "guides": "Guides",
+    "pricing": "Pricing",
+    "support": "Support",
+    "getStarted": "Get Started",
+    "viewDocumentation": "View Documentation",
+    "startBuilding": "Start Building",
+    "contactSales": "Contact Sales",
+    "allRightsReserved": "All rights reserved",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "about": "About",
+    "blog": "Blog",
+    "careers": "Careers",
+    "contact": "Contact",
+    "changelog": "Changelog",
+    "sdks": "SDKs"
+  },
+  "home": {
+    "hero": {
+      "badge": "New: Ricash API v2.0 is now live",
+      "title": "Build Powerful Payment Solutions with",
+      "titleHighlight": "Ricash API",
+      "description": "Integrate wallets, transfers, and payments seamlessly. Trusted by thousands of developers across Africa.",
+      "getStarted": "Get Started",
+      "viewDocumentation": "View Documentation"
+    },
+    "stats": {
+      "uptime": "Uptime",
+      "transactionsPerSec": "Transactions/sec",
+      "countries": "Countries",
+      "developers": "Developers"
+    },
+    "apis": {
+      "title": "Comprehensive APIs for Every Need",
+      "description": "From wallets to KYC, we provide all the tools you need to build a complete payment solution."
+    },
+    "whyChoose": {
+      "title": "Why Choose Ricash API?",
+      "lightningFast": {
+        "title": "Lightning Fast",
+        "description": "Process thousands of transactions per second with sub-100ms response times."
+      },
+      "secure": {
+        "title": "Secure by Default",
+        "description": "Bank-grade encryption and security protocols to protect your transactions."
+      },
+      "coverage": {
+        "title": "Pan-African Coverage",
+        "description": "Connect to multiple payment providers across 15+ African countries."
+      }
+    },
+    "howItWorks": {
+      "title": "Get Started in Minutes",
+      "description": "Four simple steps to integrate Ricash into your application",
+      "step1": {
+        "title": "Create an Account",
+        "description": "Sign up for free and get instant access to your developer dashboard."
+      },
+      "step2": {
+        "title": "Get API Keys",
+        "description": "Generate your API credentials and configure your sandbox environment."
+      },
+      "step3": {
+        "title": "Integrate & Test",
+        "description": "Use our SDKs and comprehensive documentation to integrate quickly."
+      },
+      "step4": {
+        "title": "Go Live",
+        "description": "Switch to production and start processing real transactions instantly."
+      }
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Join thousands of developers building the future of payments in Africa.",
+      "startBuilding": "Start Building",
+      "contactSales": "Contact Sales"
+    },
+    "footer": {
+      "tagline": "Building the future of payments in Africa.",
+      "product": "Product",
+      "developers": "Developers",
+      "company": "Company"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Monitor your API usage and manage credentials",
+    "newProject": "New Project",
+    "apiKeys": {
+      "title": "API Keys",
+      "description": "Manage your API credentials for production and sandbox environments"
+    },
+    "recentTransactions": {
+      "title": "Recent Transactions",
+      "description": "Latest test transactions in your sandbox environment",
+      "viewAll": "View All Transactions"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "viewDocumentation": "View Documentation",
+      "apiReference": "API Reference",
+      "testWebhook": "Test Webhook"
+    },
+    "apiUsage": {
+      "title": "API Usage",
+      "description": "This month's usage",
+      "upgradePlan": "Upgrade Plan"
+    },
+    "webhooks": {
+      "title": "Webhooks",
+      "description": "Configured webhook endpoints",
+      "addWebhook": "Add Webhook"
+    }
+  },
+  "pricing": {
+    "title": "Simple, Transparent Pricing",
+    "description": "Choose the plan that fits your needs. All plans include sandbox access and developer support.",
+    "addons": {
+      "title": "Add-ons"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "exceedLimit": {
+        "question": "What happens if I exceed my API call limit?",
+        "answer": "Your API calls will continue to work, and you'll be charged $0.10 per 1,000 additional calls. We'll notify you when you reach 80% and 100% of your limit."
+      },
+      "changePlan": {
+        "question": "Can I change my plan later?",
+        "answer": "Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate the billing."
+      },
+      "freeTrial": {
+        "question": "Is there a free trial?",
+        "answer": "The Starter plan is completely free forever with 50,000 API calls per month. You can upgrade to paid plans when you're ready."
+      },
+      "paymentMethods": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept all major credit cards, bank transfers for Enterprise plans, and can work with custom invoicing arrangements."
+      },
+      "refundPolicy": {
+        "question": "What is your refund policy?",
+        "answer": "We offer a 30-day money-back guarantee on all paid plans. If you're not satisfied, contact us for a full refund."
+      }
+    }
+  },
+  "guides": {
+    "title": "Guides & Tutorials",
+    "description": "Step-by-step tutorials to help you build powerful payment solutions with Ricash API. From beginner basics to advanced integrations."
+  },
+  "support": {
+    "title": "How can we help you?",
+    "description": "Get support from our team of experts or explore our comprehensive documentation",
+    "searchPlaceholder": "Search for help articles, API docs, guides...",
+    "documentation": {
+      "title": "Documentation",
+      "description": "Comprehensive guides and API references to help you integrate quickly",
+      "button": "Browse Documentation"
+    },
+    "apiReference": {
+      "title": "API Reference",
+      "description": "Detailed endpoint documentation with interactive examples",
+      "button": "View API Reference"
+    },
+    "guides": {
+      "title": "Guides & Tutorials",
+      "description": "Step-by-step tutorials for common integration scenarios",
+      "button": "Explore Guides"
+    },
+    "contact": {
+      "title": "Contact Our Team",
+      "email": {
+        "title": "Email Support",
+        "description": "We'll respond within 24 hours",
+        "info": "For general inquiries and technical support"
+      },
+      "phone": {
+        "title": "Phone Support",
+        "description": "Monday - Friday, 9 AM - 6 PM WAT",
+        "info": "For urgent issues and enterprise customers"
+      },
+      "form": {
+        "title": "Send us a message",
+        "description": "Fill out the form below and our team will get back to you as soon as possible",
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send Message"
+      }
+    },
+    "status": {
+      "title": "System Status",
+      "description": "All systems operational",
+      "online": "Online"
+    }
+  },
+  "apiReference": {
+    "title": "API Reference",
+    "description": "Complete reference for all Ricash API endpoints. Click on any endpoint to see detailed documentation, parameters, and try it out.",
+    "baseUrls": {
+      "title": "Base URLs",
+      "description": "Use these base URLs for your API requests",
+      "production": "Production",
+      "sandbox": "Sandbox"
+    }
+  }
+}
+
