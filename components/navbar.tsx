@@ -3,16 +3,26 @@
 import { Link, usePathname } from "@/i18n/routing"
 import { useTranslations } from "next-intl"
 import { Button } from "@/components/ui/button"
-import { Code2, Menu, X } from "lucide-react"
-import { useState } from "react"
+import { Menu, X } from "lucide-react"
+import { useState, useEffect } from "react"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageSwitcher } from "@/components/language-switcher"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
   const t = useTranslations("common")
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navLinks = [
     { href: "/docs", label: t("documentation") },
@@ -28,16 +38,28 @@ export function Navbar() {
   }
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <nav 
+      className={cn(
+        "sticky top-0 z-50 w-full border-b border-border/40 bg-white dark:bg-[#162529] backdrop-blur supports-[backdrop-filter]:bg-white/95 dark:supports-[backdrop-filter]:bg-[#162529]/95 transition-shadow duration-200",
+        scrolled && "shadow-md"
+      )}
+      role="navigation"
+      aria-label="Navigation principale"
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition-opacity">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-            <Code2 className="h-5 w-5 text-primary-foreground" />
-          </div>
-            <span className="text-foreground">{t("ricash")}</span>
-            <span className="text-muted-foreground font-normal text-sm hidden sm:inline">{t("developers")}</span>
+          <Link href="/" className="flex items-center hover:opacity-80 transition-opacity">
+            <Image
+              src="/ricash-logo.png"
+              alt="Ricash Logo"
+              width={48}
+              height={48}
+              className="h-12 w-auto"
+              priority
+              quality={90}
+              sizes="48px"
+            />
         </Link>
 
         {/* Desktop Navigation */}
@@ -49,8 +71,8 @@ export function Navbar() {
                 className={cn(
                   "px-3 py-2 text-sm font-medium rounded-md transition-colors",
                   isActive(link.href)
-                    ? "text-foreground bg-accent"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                    ? "text-white bg-[#2C8387]"
+                    : "text-[#29485A] dark:text-white/80 hover:text-[#2C8387] dark:hover:text-white hover:bg-[#2C8387]/10 dark:hover:bg-[#2C8387]/50"
                 )}
               >
                 {link.label}
@@ -76,10 +98,11 @@ export function Navbar() {
             <LanguageSwitcher />
             <ThemeToggle />
             <button
-              className="p-2 rounded-md hover:bg-accent transition-colors"
+              className="p-2 rounded-md hover:bg-accent transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
             >
           {isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
@@ -88,7 +111,10 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden border-t border-border/40 bg-background">
+        <div 
+          id="mobile-menu"
+          className="md:hidden border-t border-border/40 bg-white dark:bg-[#162529] animate-in slide-in-from-top-2 duration-200"
+        >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
             <Link
@@ -98,8 +124,8 @@ export function Navbar() {
                   className={cn(
                     "block px-3 py-2 text-sm font-medium rounded-md transition-colors",
                     isActive(link.href)
-                      ? "text-foreground bg-accent"
-                      : "text-muted-foreground hover:text-foreground hover:bg-accent/50"
+                      ? "text-white bg-[#2C8387]"
+                      : "text-[#29485A] dark:text-white/80 hover:text-[#2C8387] dark:hover:text-white hover:bg-[#2C8387]/10 dark:hover:bg-[#2C8387]/50"
                   )}
                 >
                   {link.label}

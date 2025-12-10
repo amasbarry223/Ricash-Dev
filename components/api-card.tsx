@@ -17,11 +17,11 @@ export function ApiCard({ title, description, icon: Icon, status = "live" }: Api
   }
 
   return (
-    <Card className="hover:shadow-lg transition-shadow">
+    <Card className="hover:shadow-lg transition-shadow bg-[#376571]/5 dark:bg-[#376571]/10">
       <CardHeader>
         <div className="flex items-start justify-between">
-          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-            <Icon className="h-6 w-6 text-primary" />
+          <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-[#AE8455]/10">
+            <Icon className="h-6 w-6 text-[#AE8455]" />
           </div>
           <Badge variant="secondary" className={statusColors[status]}>
             {status.toUpperCase()}

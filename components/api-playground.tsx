@@ -9,7 +9,8 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { CodeTabs } from "@/components/code-tabs"
-import { Play } from "lucide-react"
+import { Play, Loader2 } from "lucide-react"
+import { LoadingSpinner } from "@/components/loading-spinner"
 
 interface PlaygroundField {
   name: string
@@ -88,8 +89,17 @@ export function ApiPlayground({ endpoint, method, fields }: ApiPlaygroundProps) 
           ))}
 
           <Button type="submit" disabled={loading}>
-            <Play className="mr-2 h-4 w-4" />
-            {loading ? "Sending..." : "Send Request"}
+            {loading ? (
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Envoi en cours...
+              </>
+            ) : (
+              <>
+                <Play className="mr-2 h-4 w-4" />
+                Envoyer la requête
+              </>
+            )}
           </Button>
         </form>
 

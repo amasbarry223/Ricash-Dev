@@ -151,7 +151,7 @@ console.log(agent);`,
                   fields={[
                     { name: "name", label: "Name", type: "text", required: true, placeholder: "John Doe" },
                     { name: "phone", label: "Phone", type: "text", required: true, placeholder: "+2250701234567" },
-                    { name: "email", label: "Email", type: "email", required: true, placeholder: "john@example.com" },
+                    { name: "email", label: "Email", type: "text", required: true, placeholder: "john@example.com" },
                     { name: "location", label: "Location", type: "text", required: true, placeholder: "Abidjan, Côte d'Ivoire" },
                     { name: "commission_rate", label: "Commission Rate (%)", type: "number", placeholder: "2.5" },
                   ]}

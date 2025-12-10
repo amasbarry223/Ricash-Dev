@@ -98,7 +98,7 @@ export function DocsSidebar({ isOpen, onClose }: DocsSidebarProps = {}) {
       {/* Sidebar */}
       <aside
         className={cn(
-          "fixed lg:sticky top-16 left-0 z-30 h-[calc(100vh-4rem)] w-64 shrink-0 border-r border-border bg-background lg:bg-muted/30 p-6 overflow-y-auto transition-transform duration-300 shadow-lg lg:shadow-none",
+          "fixed lg:sticky top-16 left-0 z-30 h-[calc(100vh-4rem)] w-64 shrink-0 border-r border-border bg-[#376571]/5 dark:bg-[#376571]/10 lg:bg-[#376571]/5 dark:lg:bg-[#376571]/10 p-6 overflow-y-auto transition-transform duration-300 shadow-lg lg:shadow-none",
           "lg:translate-x-0",
           isOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
         )}
@@ -140,7 +140,7 @@ export function DocsSidebar({ isOpen, onClose }: DocsSidebarProps = {}) {
                         onClick={handleLinkClick}
                         className={cn(
                           "block text-sm text-muted-foreground hover:text-foreground transition-colors py-1 px-2 rounded",
-                          isActive(item.href) && "bg-primary/10 text-primary font-medium",
+                          isActive(item.href) && "bg-[#2C8387]/10 text-[#2C8387] dark:text-[#2C8387] font-medium",
                         )}
                       >
                         {item.title}

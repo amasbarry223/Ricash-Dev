@@ -6,6 +6,7 @@ import { notFound } from "next/navigation"
 import { routing } from "@/i18n/routing"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { Toaster } from "@/components/ui/sonner"
 import "../globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
@@ -56,17 +57,25 @@ export default async function LocaleLayout({
   // side is the easiest way to get started
   const messages = await getMessages()
 
-  return (
-    <html lang={locale}>
-      <body className={`font-sans antialiased`}>
-        <NextIntlClientProvider messages={messages}>
-          <div className="min-h-screen w-full flex flex-col">
-            {children}
-          </div>
-          <Analytics />
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  )
+        return (
+          <html lang={locale}>
+            <body className={`font-sans antialiased`}>
+              <NextIntlClientProvider messages={messages}>
+                {/* Skip to main content link for accessibility */}
+                <a 
+                  href="#main-content" 
+                  className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#2C8387] focus:text-white focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2C8387] focus:ring-offset-2 transition-all"
+                >
+                  Aller au contenu principal
+                </a>
+                <div className="min-h-screen w-full flex flex-col">
+                  {children}
+                </div>
+                <Toaster />
+                <Analytics />
+              </NextIntlClientProvider>
+            </body>
+          </html>
+        )
 }
 

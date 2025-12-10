@@ -9,7 +9,7 @@ export default function DocsPage() {
   return (
     <DocsLayout>
       <div className="prose prose-slate dark:prose-invert max-w-none">
-        <h1 className="text-4xl font-bold mb-4">Quick Start Guide</h1>
+        <h1 id="quick-start-guide" className="text-4xl font-bold mb-4">Quick Start Guide</h1>
         <p className="text-lg text-muted-foreground">
           {
             "Get started with Ricash API in under 5 minutes. This guide will walk you through authentication, making your first API call, and understanding the response."
@@ -27,7 +27,7 @@ export default function DocsPage() {
           </AlertDescription>
         </Alert>
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">Step 1: Get Your API Credentials</h2>
+        <h2 id="step-1-get-api-credentials" className="text-2xl font-bold mt-8 mb-4">Step 1: Get Your API Credentials</h2>
         <p>
           {"After creating your account, navigate to the "}
           <Link href="/dashboard" className="text-primary hover:underline">
@@ -44,7 +44,7 @@ export default function DocsPage() {
           </li>
         </ul>
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">Step 2: Authenticate</h2>
+        <h2 id="step-2-authenticate" className="text-2xl font-bold mt-8 mb-4">Step 2: Authenticate</h2>
         <p>{"All API requests require authentication. First, obtain an access token using your credentials:"}</p>
 
         <CodeTabs
@@ -130,7 +130,7 @@ echo $data['access_token'];`,
           </AlertDescription>
         </Alert>
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">Step 3: Make Your First API Call</h2>
+        <h2 id="step-3-first-api-call" className="text-2xl font-bold mt-8 mb-4">Step 3: Make Your First API Call</h2>
         <p>{"Now that you have an access token, let's create a wallet for a user:"}</p>
 
         <CodeTabs
@@ -204,7 +204,7 @@ print(wallet)`,
           ]}
         />
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">Next Steps</h2>
+        <h2 id="next-steps" className="text-2xl font-bold mt-8 mb-4">Next Steps</h2>
         <p>{"Now that you've made your first API call, explore more capabilities:"}</p>
 
         <div className="grid md:grid-cols-2 gap-4 my-6 not-prose">
@@ -245,7 +245,7 @@ print(wallet)`,
           </Button>
         </div>
 
-        <h2 className="text-2xl font-bold mt-8 mb-4">Need Help?</h2>
+        <h2 id="need-help" className="text-2xl font-bold mt-8 mb-4">Need Help?</h2>
         <p>
           {"If you encounter any issues or have questions, check out our "}
           <Link href="/support" className="text-primary hover:underline">

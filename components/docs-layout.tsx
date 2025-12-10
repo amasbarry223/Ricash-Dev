@@ -5,9 +5,11 @@ import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { DocsSidebar } from "@/components/docs-sidebar"
 import { DocsBreadcrumbs } from "@/components/docs-breadcrumbs"
-import { Search, Menu } from "lucide-react"
-import { Input } from "@/components/ui/input"
+import { DocsTableOfContents } from "@/components/docs-table-of-contents"
+import { DocsNavigation } from "@/components/docs-navigation"
+import { Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { DocsSearch } from "@/components/docs-search"
 
 export function DocsLayout({ children }: { children: React.ReactNode }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
@@ -17,7 +19,7 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
       <Navbar />
       <div className="flex w-full max-w-7xl mx-auto">
         <DocsSidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
-        <main className="flex-1 flex flex-col">
+        <main id="main-content" className="flex-1 flex flex-col">
           <div className="border-b border-border bg-background sticky top-16 z-40 w-full lg:z-30">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
               <div className="py-4 flex items-center gap-4">
@@ -33,18 +35,20 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
                 </Button>
 
                 {/* Search */}
-                <div className="relative max-w-md flex-1">
-                  <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                  <Input placeholder="Search documentation..." className="pl-10" disabled />
-                  <span className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">Coming Soon</span>
-                </div>
+                <DocsSearch />
               </div>
             </div>
           </div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="py-16 sm:py-20 lg:py-24 max-w-4xl">
-              <DocsBreadcrumbs />
-              {children}
+            <div className="py-16 sm:py-20 lg:py-24">
+              <div className="flex gap-8">
+                <div className="flex-1 max-w-4xl min-w-0">
+                  <DocsBreadcrumbs />
+                  {children}
+                  <DocsNavigation />
+                </div>
+                <DocsTableOfContents className="w-64 shrink-0 hidden xl:block" />
+              </div>
             </div>
           </div>
         </main>

@@ -6,7 +6,10 @@ import { Button } from "@/components/ui/button"
 import { Navbar } from "@/components/navbar"
 import { ApiCard } from "@/components/api-card"
 import { CodeBlock } from "@/components/code-block"
-import { ArrowRight, Wallet, Send, CreditCard, Shield, Users, Zap, Globe, Code2, Lock, Gauge } from "lucide-react"
+import { ArrowRight, Wallet, Send, CreditCard, Shield, Users, Zap, Globe, Lock, Gauge } from "lucide-react"
+import Image from "next/image"
+import { Suspense } from "react"
+import { ScrollAnimation } from "@/components/scroll-animation"
 
 export default function HomePage() {
   const t = useTranslations("home")
@@ -14,6 +17,7 @@ export default function HomePage() {
   return (
     <div className="min-h-screen w-full flex flex-col">
       <Navbar />
+      <main id="main-content" className="flex-1">
 
       {/* Hero Section */}
       <section className="w-full border-b border-border/40">
@@ -165,36 +169,40 @@ export default function HomePage() {
               </h2>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-7xl mx-auto">
+              <ScrollAnimation direction="up" delay={0}>
               <div className="flex flex-col items-center text-center gap-4 sm:gap-5">
-                <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
-                  <Gauge className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
+                <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[#AE8455]/10 border border-[#AE8455]/20">
+                  <Gauge className="h-7 w-7 sm:h-8 sm:w-8 text-[#AE8455]" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold">{t("whyChoose.lightningFast.title")}</h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-sm">
                   {t("whyChoose.lightningFast.description")}
                 </p>
               </div>
-
+              </ScrollAnimation>
+              <ScrollAnimation direction="up" delay={150}>
               <div className="flex flex-col items-center text-center gap-4 sm:gap-5">
-                <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
-                  <Lock className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
+                <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[#AE8455]/10 border border-[#AE8455]/20">
+                  <Lock className="h-7 w-7 sm:h-8 sm:w-8 text-[#AE8455]" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold">{t("whyChoose.secure.title")}</h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-sm">
                   {t("whyChoose.secure.description")}
                 </p>
               </div>
-
-              <div className="flex flex-col items-center text-center gap-4 sm:gap-5 sm:col-span-2 lg:col-span-1">
-                <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-primary/10 border border-primary/20">
-                  <Globe className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
+              </ScrollAnimation>
+              <ScrollAnimation direction="up" delay={300}>
+              <div className="flex flex-col items-center text-center gap-4 sm:gap-5">
+                <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full bg-[#AE8455]/10 border border-[#AE8455]/20">
+                  <Globe className="h-7 w-7 sm:h-8 sm:w-8 text-[#AE8455]" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold">{t("whyChoose.coverage.title")}</h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-sm">
                   {t("whyChoose.coverage.description")}
                 </p>
               </div>
+              </ScrollAnimation>
             </div>
           </div>
         </div>
@@ -273,14 +281,14 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full bg-primary text-primary-foreground">
+      <section className="w-full bg-[#2C8387] text-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-16 sm:py-20 lg:py-24">
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-4 sm:mb-6">
                 {t("cta.title")}
               </h2>
-              <p className="text-base sm:text-lg text-primary-foreground/90 mb-8 sm:mb-10 leading-relaxed">
+              <p className="text-base sm:text-lg text-white/90 mb-8 sm:mb-10 leading-relaxed">
                 {t("cta.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
@@ -293,7 +301,7 @@ export default function HomePage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="bg-transparent border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10 w-full sm:w-auto"
+                  className="bg-transparent border-white/20 text-white hover:bg-white/10 w-full sm:w-auto"
                   asChild
                 >
                   <Link href="/support">{tCommon("contactSales")}</Link>
@@ -312,9 +320,13 @@ export default function HomePage() {
               {/* Brand Column */}
               <div className="lg:col-span-1">
                 <div className="flex items-center gap-2 font-bold text-lg mb-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
-                    <Code2 className="h-5 w-5 text-primary-foreground" />
-                  </div>
+                  <Image
+                    src="/ricash-logo.png"
+                    alt="Ricash Logo"
+                    width={32}
+                    height={32}
+                    className="h-8 w-auto"
+                  />
                   <span>{tCommon("ricash")}</span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
@@ -462,6 +474,7 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+      </main>
     </div>
   )
 }
