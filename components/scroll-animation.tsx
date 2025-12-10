@@ -26,6 +26,9 @@ export function ScrollAnimation({
           setTimeout(() => {
             setIsVisible(true)
           }, delay)
+        } else {
+          // Optionnel : réinitialiser l'animation si l'élément sort de la vue
+          // setIsVisible(false)
         }
       },
       {
@@ -34,13 +37,14 @@ export function ScrollAnimation({
       }
     )
 
-    if (ref.current) {
-      observer.observe(ref.current)
+    const currentRef = ref.current
+    if (currentRef) {
+      observer.observe(currentRef)
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current)
+      if (currentRef) {
+        observer.unobserve(currentRef)
       }
     }
   }, [delay])
@@ -56,12 +60,14 @@ export function ScrollAnimation({
   return (
     <div
       ref={ref}
+      data-scroll-animation
       className={cn(
         "transition-all duration-500 ease-out",
         !isVisible && directionClasses[direction],
-        isVisible && "translate-y-0 translate-x-0 opacity-100",
+        isVisible && "translate-y-0 translate-x-0 opacity-100 is-visible",
         className
       )}
+      style={!isVisible ? { willChange: 'transform, opacity' } : { willChange: 'auto' }}
     >
       {children}
     </div>

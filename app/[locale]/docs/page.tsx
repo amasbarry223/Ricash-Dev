@@ -4,6 +4,12 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 import { InfoIcon } from "lucide-react"
 import { Link } from "@/i18n/routing"
 import { Button } from "@/components/ui/button"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Quick Start Guide",
+  description: "Get started with Ricash API in under 5 minutes. Learn authentication, make your first API call, and understand responses.",
+}
 
 export default function DocsPage() {
   return (

@@ -7,15 +7,58 @@ import { routing } from "@/i18n/routing"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Toaster } from "@/components/ui/sonner"
+import { BackToTop } from "@/components/back-to-top"
+import { ScrollProgress } from "@/components/scroll-progress"
+import { ViewTransitions } from "@/components/view-transitions"
+import { KeyboardShortcuts } from "@/components/keyboard-shortcuts"
+import { PerformanceMonitor } from "@/components/performance-monitor"
+import { SkipToContent } from "@/components/skip-to-content"
+import { ThemeProvider } from "@/components/theme-provider"
 import "../globals.css"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Ricash Developer Portal",
-  description: "Build powerful payment solutions with Ricash API",
-  generator: "v0.app",
+  title: {
+    default: "Ricash Developer Portal",
+    template: "%s | Ricash Developer Portal",
+  },
+  description: "Build powerful payment solutions with Ricash API. Documentation complète, guides pratiques et référence API pour intégrer les paiements en Afrique.",
+  keywords: ["Ricash", "API", "Paiements", "Mobile Money", "Afrique", "Développeur", "Documentation"],
+  authors: [{ name: "Ricash" }],
+  creator: "Ricash",
+  publisher: "Ricash",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  metadataBase: new URL("https://developer.ricash.com"),
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    alternateLocale: "en_US",
+    siteName: "Ricash Developer Portal",
+    title: "Ricash Developer Portal",
+    description: "Build powerful payment solutions with Ricash API",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ricash Developer Portal",
+    description: "Build powerful payment solutions with Ricash API",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   icons: {
     icon: [
       {
@@ -58,22 +101,29 @@ export default async function LocaleLayout({
   const messages = await getMessages()
 
         return (
-          <html lang={locale}>
+          <html lang={locale} suppressHydrationWarning>
             <body className={`font-sans antialiased`}>
-              <NextIntlClientProvider messages={messages}>
-                {/* Skip to main content link for accessibility */}
-                <a 
-                  href="#main-content" 
-                  className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#2C8387] focus:text-white focus:rounded-md focus:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#2C8387] focus:ring-offset-2 transition-all"
-                >
-                  Aller au contenu principal
-                </a>
-                <div className="min-h-screen w-full flex flex-col">
-                  {children}
-                </div>
-                <Toaster />
-                <Analytics />
-              </NextIntlClientProvider>
+              <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+                storageKey="ricash-theme"
+              >
+                <NextIntlClientProvider messages={messages}>
+                  <SkipToContent />
+                  <ScrollProgress />
+                  <ViewTransitions />
+                  <KeyboardShortcuts />
+                  {process.env.NODE_ENV === "development" && <PerformanceMonitor />}
+                  <div className="min-h-screen w-full flex flex-col">
+                    {children}
+                  </div>
+                  <BackToTop />
+                  <Toaster />
+                  <Analytics />
+                </NextIntlClientProvider>
+              </ThemeProvider>
             </body>
           </html>
         )

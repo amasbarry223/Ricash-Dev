@@ -4,44 +4,44 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Palette Ricash - Mode Clair */
-  --bleu-petrole-fonce: #29485A;
-  --bleu-vert: #2C8387;
-  --bleu-nuit: #162529;
-  --bleu-gris: #376571;
-  --or-bronze: #AE8455;
-  --noir: #000000;
+  /* Palette Ricash - Mode Clair - Couleurs exactes */
+  --bleu-petrole-fonce: #29485A; /* Titres, header */
+  --bleu-vert: #2C8387; /* Boutons, CTA */
+  --bleu-nuit: #162529; /* Backgrounds */
+  --bleu-gris: #376571; /* Sections, cartes */
+  --or-bronze: #AE8455; /* Highlights, icônes */
+  --noir: #000000; /* Texte */
   
   /* Variables système - Mode Clair */
-  --background: oklch(0.98 0.005 220);
-  --foreground: oklch(0.15 0.01 220);
+  --background: #ffffff; /* Blanc pur pour contraste */
+  --foreground: #000000; /* Noir pour texte */
   --card: oklch(0.99 0.005 220);
   --card-foreground: oklch(0.15 0.01 220);
   --popover: oklch(0.99 0.005 220);
   --popover-foreground: oklch(0.15 0.01 220);
-  --primary: oklch(0.45 0.08 200); /* Bleu-vert #2C8387 */
-  --primary-foreground: oklch(0.98 0 0);
-  --secondary: oklch(0.42 0.06 210); /* Bleu-gris #376571 */
-  --secondary-foreground: oklch(0.98 0 0);
+  --primary: #2C8387; /* Bleu-vert - Boutons, CTA */
+  --primary-foreground: #ffffff; /* Blanc pour contraste */
+  --secondary: #376571; /* Bleu-gris - Sections, cartes */
+  --secondary-foreground: #ffffff; /* Blanc pour contraste */
   --muted: oklch(0.95 0.01 220);
   --muted-foreground: oklch(0.50 0.02 220);
-  --accent: oklch(0.65 0.08 70); /* Or/Bronze #AE8455 */
-  --accent-foreground: oklch(0.15 0.01 220);
+  --accent: #AE8455; /* Or/Bronze - Highlights, icônes */
+  --accent-foreground: #000000; /* Noir pour contraste */
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.90 0.01 220);
   --input: oklch(0.90 0.01 220);
-  --ring: oklch(0.45 0.08 200); /* Bleu-vert */
-  --chart-1: oklch(0.45 0.08 200); /* Bleu-vert */
-  --chart-2: oklch(0.65 0.08 70); /* Or/Bronze */
-  --chart-3: oklch(0.42 0.06 210); /* Bleu-gris */
-  --chart-4: oklch(0.40 0.05 220); /* Bleu pétrole foncé */
+  --ring: #2C8387; /* Bleu-vert */
+  --chart-1: #2C8387; /* Bleu-vert */
+  --chart-2: #AE8455; /* Or/Bronze */
+  --chart-3: #376571; /* Bleu-gris */
+  --chart-4: #29485A; /* Bleu pétrole foncé */
   --chart-5: oklch(0.50 0.07 190);
   --radius: 0.75rem;
-  --sidebar: oklch(0.97 0.01 220);
-  --sidebar-foreground: oklch(0.15 0.01 220);
-  --sidebar-primary: oklch(0.40 0.05 220); /* Bleu pétrole foncé */
-  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar: #ffffff; /* Blanc */
+  --sidebar-foreground: #000000; /* Noir */
+  --sidebar-primary: #29485A; /* Bleu pétrole foncé */
+  --sidebar-primary-foreground: #ffffff; /* Blanc */
   --sidebar-accent: oklch(0.95 0.01 220);
   --sidebar-accent-foreground: oklch(0.15 0.01 220);
   --sidebar-border: oklch(0.90 0.01 220);
@@ -51,34 +51,34 @@
 .dark {
   /* Palette Ricash - Mode Sombre */
   /* Variables système - Mode Sombre */
-  --background: oklch(0.18 0.02 220); /* Bleu nuit #162529 */
-  --foreground: oklch(0.95 0.005 220);
-  --card: oklch(0.22 0.025 220); /* Bleu-gris foncé */
-  --card-foreground: oklch(0.95 0.005 220);
-  --popover: oklch(0.22 0.025 220);
-  --popover-foreground: oklch(0.95 0.005 220);
-  --primary: oklch(0.50 0.10 200); /* Bleu-vert plus clair #2C8387 */
-  --primary-foreground: oklch(0.95 0.005 220);
-  --secondary: oklch(0.35 0.05 210); /* Bleu-gris #376571 */
-  --secondary-foreground: oklch(0.95 0.005 220);
-  --muted: oklch(0.25 0.02 220);
-  --muted-foreground: oklch(0.70 0.01 220);
-  --accent: oklch(0.70 0.10 70); /* Or/Bronze plus clair #AE8455 */
-  --accent-foreground: oklch(0.18 0.02 220);
+  --background: #162529; /* Bleu nuit - Backgrounds */
+  --foreground: #ffffff; /* Blanc pour texte */
+  --card: #376571; /* Bleu-gris - Sections, cartes */
+  --card-foreground: #ffffff; /* Blanc pour texte */
+  --popover: #376571; /* Bleu-gris */
+  --popover-foreground: #ffffff; /* Blanc */
+  --primary: #2C8387; /* Bleu-vert - Boutons, CTA */
+  --primary-foreground: #ffffff; /* Blanc */
+  --secondary: #376571; /* Bleu-gris - Sections, cartes */
+  --secondary-foreground: #ffffff; /* Blanc */
+  --muted: #29485A; /* Bleu pétrole foncé */
+  --muted-foreground: #ffffff; /* Blanc */
+  --accent: #AE8455; /* Or/Bronze - Highlights, icônes */
+  --accent-foreground: #ffffff; /* Blanc */
   --destructive: oklch(0.496 0.141 25.723);
   --destructive-foreground: oklch(0.95 0.005 220);
   --border: oklch(0.30 0.02 220);
   --input: oklch(0.30 0.02 220);
-  --ring: oklch(0.50 0.10 200); /* Bleu-vert */
-  --chart-1: oklch(0.50 0.10 200); /* Bleu-vert */
-  --chart-2: oklch(0.70 0.10 70); /* Or/Bronze */
-  --chart-3: oklch(0.35 0.05 210); /* Bleu-gris */
-  --chart-4: oklch(0.40 0.05 220); /* Bleu pétrole foncé */
+  --ring: #2C8387; /* Bleu-vert */
+  --chart-1: #2C8387; /* Bleu-vert */
+  --chart-2: #AE8455; /* Or/Bronze */
+  --chart-3: #376571; /* Bleu-gris */
+  --chart-4: #29485A; /* Bleu pétrole foncé */
   --chart-5: oklch(0.55 0.08 190);
-  --sidebar: oklch(0.20 0.025 220); /* Bleu nuit légèrement plus clair */
-  --sidebar-foreground: oklch(0.95 0.005 220);
-  --sidebar-primary: oklch(0.40 0.05 220); /* Bleu pétrole foncé */
-  --sidebar-primary-foreground: oklch(0.95 0.005 220);
+  --sidebar: #162529; /* Bleu nuit - Backgrounds */
+  --sidebar-foreground: #ffffff; /* Blanc */
+  --sidebar-primary: #29485A; /* Bleu pétrole foncé */
+  --sidebar-primary-foreground: #ffffff; /* Blanc */
   --sidebar-accent: oklch(0.25 0.02 220);
   --sidebar-accent-foreground: oklch(0.95 0.005 220);
   --sidebar-border: oklch(0.30 0.02 220);
@@ -134,19 +134,46 @@
     @apply bg-background text-foreground;
   }
   
-  /* Styles personnalisés pour la palette Ricash */
-  h1, h2, h3, h4, h5, h6 {
-    @apply text-[#29485A] dark:text-white;
+  /* Optimisation performance - Éviter les reflows/repaints inutiles */
+  html {
+    scroll-behavior: smooth;
   }
   
+  /* Fix pour animations bizarres au scroll */
+  section {
+    contain: layout style paint;
+  }
+  
+  /* Styles personnalisés pour la palette Ricash */
+  /* Titres avec bleu pétrole foncé */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-[#29485A] dark:text-white;
+    font-weight: 600;
+  }
+
+  /* Texte principal en noir */
+  body {
+    @apply text-[#000000] dark:text-white;
+  }
+
   /* Icônes importantes en or/bronze */
   .icon-highlight {
     @apply text-[#AE8455];
   }
-  
+
   /* Sections et cartes avec bleu-gris */
   .section-card {
-    @apply bg-[#376571]/10 dark:bg-[#376571]/20;
+    @apply bg-[#376571]/10 dark:bg-[#376571]/30 border border-[#376571]/20;
+  }
+
+  /* Headers avec bleu pétrole foncé */
+  header, .header {
+    @apply bg-[#29485A] text-white;
+  }
+
+  /* Boutons et CTA avec bleu-vert */
+  .btn-primary, button[type="submit"], .cta-button {
+    @apply bg-[#2C8387] hover:bg-[#2C8387]/90 text-white;
   }
   
   /* Amélioration accessibilité - Focus visible */
@@ -154,7 +181,7 @@
     @apply outline-none ring-2 ring-[#2C8387] ring-offset-2;
   }
   
-  /* Animations smooth */
+  /* Animations smooth - Optimisées pour performance */
   @keyframes fade-in-up {
     from {
       opacity: 0;
@@ -168,5 +195,50 @@
   
   .animate-fade-in-up {
     animation: fade-in-up 0.3s ease-out;
+    will-change: transform, opacity;
+  }
+  
+  /* Optimisation performance pour animations au scroll */
+  @media (prefers-reduced-motion: no-preference) {
+    [data-scroll-animation] {
+      will-change: transform, opacity;
+      transform: translateZ(0); /* Force GPU acceleration */
+    }
+    
+    [data-scroll-animation].is-visible {
+      will-change: auto;
+    }
+  }
+  
+  /* Fix pour animations bizarres - Isolation de la section hero */
+  section:first-of-type {
+    contain: layout style paint;
+    transform: translateZ(0); /* Force GPU layer */
+  }
+
+  /* Smooth scroll */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Selection color */
+  ::selection {
+    @apply bg-[#2C8387]/20 text-[#29485A];
+  }
+
+  .dark ::selection {
+    @apply bg-[#2C8387]/30 text-white;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }

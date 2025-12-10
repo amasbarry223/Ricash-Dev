@@ -20,7 +20,7 @@ export default function HomePage() {
       <main id="main-content" className="flex-1">
 
       {/* Hero Section */}
-      <section className="w-full border-b border-border/40">
+      <section className="w-full border-b border-border/40" style={{ contain: 'layout style paint' }}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-16 sm:py-20 lg:py-28 flex flex-col items-center">
             <div className="flex flex-col items-center text-center gap-6 sm:gap-8 max-w-4xl w-full">
@@ -109,7 +109,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-16 sm:py-20 lg:py-24">
             <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-4 sm:mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-4 sm:mb-6 text-[#29485A] dark:text-white">
                 {t("apis.title")}
               </h2>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
@@ -164,7 +164,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-16 sm:py-20 lg:py-24">
             <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-4 sm:mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-4 sm:mb-6 text-[#29485A] dark:text-white">
                 {t("whyChoose.title")}
               </h2>
             </div>
@@ -213,7 +213,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="py-16 sm:py-20 lg:py-24">
             <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-4 sm:mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-balance mb-4 sm:mb-6 text-[#29485A] dark:text-white">
                 {t("howItWorks.title")}
               </h2>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
@@ -319,15 +319,16 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
               {/* Brand Column */}
               <div className="lg:col-span-1">
-                <div className="flex items-center gap-2 font-bold text-lg mb-4">
+                <div className="flex items-center mb-4">
                   <Image
                     src="/ricash-logo.png"
                     alt="Ricash Logo"
-                    width={32}
-                    height={32}
-                    className="h-8 w-auto"
+                    width={56}
+                    height={56}
+                    className="h-14 w-auto"
+                    priority
+                    quality={90}
                   />
-                  <span>{tCommon("ricash")}</span>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
                   {t("footer.tagline")}
@@ -456,7 +457,7 @@ export default function HomePage() {
             <div className="border-t border-border mt-12 pt-8">
               <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
                 <p className="text-sm text-muted-foreground text-center sm:text-left">
-                  &copy; 2025 {tCommon("ricash")}. {tCommon("allRightsReserved")}.
+                  &copy; 2025 {tCommon("allRightsReserved")}.
                 </p>
                 <div className="flex items-center gap-6 text-sm text-muted-foreground">
                   <Link href="#" className="hover:text-foreground transition-colors">

@@ -17,10 +17,19 @@ export function Navbar() {
   const t = useTranslations("common")
 
   useEffect(() => {
+    let ticking = false
+
     const handleScroll = () => {
-      setScrolled(window.scrollY > 10)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 10)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener("scroll", handleScroll)
+
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -40,8 +49,8 @@ export function Navbar() {
   return (
     <nav 
       className={cn(
-        "sticky top-0 z-50 w-full border-b border-border/40 bg-white dark:bg-[#162529] backdrop-blur supports-[backdrop-filter]:bg-white/95 dark:supports-[backdrop-filter]:bg-[#162529]/95 transition-shadow duration-200",
-        scrolled && "shadow-md"
+        "sticky top-0 z-50 w-full border-b border-[#29485A]/20 bg-white dark:bg-[#162529] backdrop-blur supports-[backdrop-filter]:bg-white/95 dark:supports-[backdrop-filter]:bg-[#162529]/95 transition-shadow duration-200",
+        scrolled && "shadow-md shadow-[#29485A]/10"
       )}
       role="navigation"
       aria-label="Navigation principale"
@@ -71,8 +80,8 @@ export function Navbar() {
                 className={cn(
                   "px-3 py-2 text-sm font-medium rounded-md transition-colors",
                   isActive(link.href)
-                    ? "text-white bg-[#2C8387]"
-                    : "text-[#29485A] dark:text-white/80 hover:text-[#2C8387] dark:hover:text-white hover:bg-[#2C8387]/10 dark:hover:bg-[#2C8387]/50"
+                    ? "text-white bg-[#2C8387] font-semibold"
+                    : "text-[#29485A] dark:text-white/90 hover:text-[#2C8387] dark:hover:text-white hover:bg-[#2C8387]/10 dark:hover:bg-[#2C8387]/20"
                 )}
               >
                 {link.label}

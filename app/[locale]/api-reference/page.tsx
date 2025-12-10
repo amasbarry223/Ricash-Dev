@@ -4,6 +4,12 @@ import { EndpointCard } from "@/components/endpoint-card"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Wallet, Send, CreditCard, Shield, Users, Globe } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "API Reference",
+  description: "Complete reference for all Ricash API endpoints. Wallet, Transfer, Payment, KYC, and Agent APIs with interactive examples.",
+}
 
 export default function ApiReferencePage() {
   return (

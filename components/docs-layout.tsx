@@ -44,7 +44,9 @@ export function DocsLayout({ children }: { children: React.ReactNode }) {
               <div className="flex gap-8">
                 <div className="flex-1 max-w-4xl min-w-0">
                   <DocsBreadcrumbs />
-                  {children}
+                  <article>
+                    {children}
+                  </article>
                   <DocsNavigation />
                 </div>
                 <DocsTableOfContents className="w-64 shrink-0 hidden xl:block" />
